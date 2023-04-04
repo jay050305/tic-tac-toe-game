@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background: #212529;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+div.game-main {
+    width: 280px;
+    height: 280px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    background: #DEE2E6;
+    align-items: center;
+    justify-content: center;
+}
+
+div.cell {
+    width: 100%;
+    height: 100%;
+    background: #212529;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+div.round {
+    width: 60%;
+    height: 70%;
+    border-radius: 50%;
+    border: 5px solid #DEE2E6;
+}
+
+div.cross {
+    width: 80%;
+    aspect-ratio: 1;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    /* background: #c3c3c3; */
+}
+
+div.cross-line {
+    height: 100%;
+    width: 5px;
+
+    background: #DEE2E6;
+    position: absolute;
+    transform: rotate(45deg);
+    border-radius: 5px;
+}
+
+div.cross-line:first-child {
+    transform: rotate(-45deg);
+}
+
+div.win-notification{
+    position: absolute;
+    inset: 0;
+    margin: auto;
+
+    height: 300px;
+    width: 300px;
+    backdrop-filter: blur(10px);
+    background: #ADB5BD50;
+    border-radius: 20px;
+    padding: 10px;
+    
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    animation: scaleAnim 0.4s ease 0s 1 forwards;
+}
+@keyframes scaleAnim {
+    from{
+        transform: scale(20);
+        background: #ADB5BD;
+    }
+    to{
+        background: #ADB5BD50;
+        transform: scale(1);
+    }
+}
+div.win-text{
+    width: 90%;
+    height: 50%;
+    margin-top: 15px;
+    /* background: #DEE2E6; */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+div.win-text h1{
+    /* color: #212529; */
+    font-family: sans-serif;
+}
+
+div.winner{
+    height: 50%;
+    width: 30%;
+}
+
+div.win-notification button{
+    width: 90%;
+    height: 40px;
+    border: 0;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+div.win-notification button:hover{
+    background: #343A40;
+}
